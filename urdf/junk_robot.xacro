@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="junk_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find junk_model_control)/urdf/materials.xacro" />
+<xacro:include filename="$(find junk_model_control)/urdf/junk_robot.trans" />
+<xacro:include filename="$(find junk_model_control)/urdf/junk_robot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.06533712607716594 0.0 0.0698335015047238"/>
+    <mass value="4.108694926414033"/>
+    <inertia ixx="0.089447" ixy="-0.0" ixz="0.036266" iyy="0.131604" iyz="0.0" izz="0.144268"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ruota_v1__1__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.0816681711721685e-15 -0.02500000000000005 0.0"/>
+    <mass value="2.7037331774957147"/>
+    <inertia ixx="0.004906" ixy="-0.0" ixz="0.0" iyy="0.008686" iyz="-0.0" izz="0.004906"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.19 0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.19 0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ruota_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.1094237467877974e-15 -0.02500000000000005 0.0"/>
+    <mass value="2.7037331774957147"/>
+    <inertia ixx="0.004906" ixy="0.0" ixz="0.0" iyy="0.008686" iyz="-0.0" izz="0.004906"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.19 0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.19 0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ruota_v1__2__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.0816681711721685e-15 0.02500000000000005 0.0"/>
+    <mass value="2.7037331774957147"/>
+    <inertia ixx="0.004906" ixy="0.0" ixz="0.0" iyy="0.008686" iyz="0.0" izz="0.004906"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.19 -0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.19 -0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ruota_v1__3__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.1094237467877974e-15 0.02500000000000005 0.0"/>
+    <mass value="2.7037331774957147"/>
+    <inertia ixx="0.004906" ixy="-0.0" ixz="0.0" iyy="0.008686" iyz="0.0" izz="0.004906"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.19 -0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.19 -0.21 -0.0025"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/ruota_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="frontsx" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.19 -0.21 0.0025"/>
+  <parent link="base_link"/>
+  <child link="ruota_v1__1__1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rearsx" type="continuous">
+  <origin rpy="0 0 0" xyz="0.19 -0.21 0.0025"/>
+  <parent link="base_link"/>
+  <child link="ruota_v1_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="frontdx" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.19 0.21 0.0025"/>
+  <parent link="base_link"/>
+  <child link="ruota_v1__2__1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="reardx" type="continuous">
+  <origin rpy="0 0 0" xyz="0.19 0.21 0.0025"/>
+  <parent link="base_link"/>
+  <child link="ruota_v1__3__1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+</robot>

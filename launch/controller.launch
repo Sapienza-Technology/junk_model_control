@@ -1,0 +1,11 @@
+<launch>
+
+<rosparam file="$(find junk_model_control)/launch/controller.yaml" command="load"/>
+<node args="frontsx_controller rearsx_controller frontdx_controller reardx_controller joint_state_controller " 
+      name="controller_spawner" ns="junk_robot" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+
+<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+  <remap from="/joint_states" to="/junk_robot/joint_states"/>
+</node>
+
+</launch>

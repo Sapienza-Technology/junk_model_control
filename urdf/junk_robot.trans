@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="junk_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="frontsx_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="frontsx">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="frontsx_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="rearsx_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rearsx">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rearsx_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="frontdx_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="frontdx">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="frontdx_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="reardx_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="reardx">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="reardx_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

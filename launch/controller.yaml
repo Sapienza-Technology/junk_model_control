@@ -1,0 +1,23 @@
+junk_robot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Joints Controllers --------------------------------------
+  frontsx_controller:
+    type: effort_controllers/JointVelocityController
+    joint: frontsx
+    pid: {p: 1.0, i: 0.1, d: 0}
+  rearsx_controller:
+    type: effort_controllers/JointVelocityController
+    joint: rearsx
+    pid: {p: 1.0, i: 0.1, d: 0}
+  frontdx_controller:
+    type: effort_controllers/JointVelocityController
+    joint: frontdx
+    pid: {p: 1.0, i: 0.1, d: 0}
+  reardx_controller:
+    type: effort_controllers/JointVelocityController
+    joint: reardx
+    pid: {p: 1.0, i: 0.1, d: 0}

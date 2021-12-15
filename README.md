@@ -10,14 +10,17 @@ Cosa va installato (sudo apt install):
 
 
 Come si usa:
+
 Con roslaunch avviare gazebo.launch per lanciare il modello
 Se si usa un plugin di gazebo per il movimento:
-    -rimuovere commenti dal plugin che si vuole usare in nomeRobot.gazebo
-    -avviare teleop_twist_keyboard o qualcosa che invia velocità sul   
- topic/cmd_vel
+    
+   rimuovere commenti dal plugin che si vuole usare in nomeRobot.gazebo
+   
+   avviare teleop_twist_keyboard o qualcosa che invia velocità sul topic/cmd_vel
+   
 Se si controllano i singoli joint:
-    -avviare controller.launch, ora i topic sono avviati e si possono inviare i  
-messaggi lì
+ 
+   avviare controller.launch, ora i topic sono avviati e si possono inviare i messaggi lì
 
 
 

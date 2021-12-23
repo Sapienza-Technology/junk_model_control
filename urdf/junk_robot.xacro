@@ -4,6 +4,7 @@
 <xacro:include filename="$(find junk_model_control)/urdf/materials.xacro" />
 <xacro:include filename="$(find junk_model_control)/urdf/junk_robot.trans" />
 <xacro:include filename="$(find junk_model_control)/urdf/junk_robot.gazebo" />
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.06533712607716594 0.0 0.0698335015047238"/>
@@ -25,7 +26,7 @@
   </collision>
 </link>
 
-<link name="ruota_v1__1__1">
+<link name="wheel_front_left">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.0816681711721685e-15 -0.02500000000000005 0.0"/>
     <mass value="2.7037331774957147"/>
@@ -34,19 +35,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.19 0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_f_l.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.19 0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_f_l.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="ruota_v1_1">
+<link name="wheel_rear_left">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.1094237467877974e-15 -0.02500000000000005 0.0"/>
     <mass value="2.7037331774957147"/>
@@ -55,19 +56,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.19 0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_r_l.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.19 0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_r_l.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="ruota_v1__2__1">
+<link name="wheel_front_right">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.0816681711721685e-15 0.02500000000000005 0.0"/>
     <mass value="2.7037331774957147"/>
@@ -76,19 +77,19 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.19 -0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_f_r.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.19 -0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_f_r.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="ruota_v1__3__1">
+<link name="wheel_rear_right">
   <inertial>
     <origin rpy="0 0 0" xyz="-2.1094237467877974e-15 0.02500000000000005 0.0"/>
     <mass value="2.7037331774957147"/>
@@ -97,44 +98,83 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.19 -0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_r_r.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.19 -0.21 -0.0025"/>
     <geometry>
-      <mesh filename="package://junk_model_control/meshes/ruota_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://junk_model_control/meshes/wheel_r_r.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
+
+<link name="camera_link">
+  <inertial>
+    <mass value="0.1" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+               iyy="0.0001" iyz="0.0" 
+               izz="0.0001" />
+  </inertial>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/kinect.dae" scale="1 1 1" />
+    </geometry>
+  </collision>
+  <visual name="visual">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://junk_model_control/meshes/kinect.dae" scale="1 1 1" />
+    </geometry>
+    <material name="silver"/>
+  </visual>
+</link>
+
+<link name="camera_dummy_link"> </link>
+
 <joint name="frontsx" type="continuous">
   <origin rpy="0 0 0" xyz="-0.19 -0.21 0.0025"/>
   <parent link="base_link"/>
-  <child link="ruota_v1__1__1"/>
+  <child link="wheel_front_left"/>
   <axis xyz="0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="rearsx" type="continuous">
   <origin rpy="0 0 0" xyz="0.19 -0.21 0.0025"/>
   <parent link="base_link"/>
-  <child link="ruota_v1_1"/>
+  <child link="wheel_rear_left"/>
   <axis xyz="0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="frontdx" type="continuous">
   <origin rpy="0 0 0" xyz="-0.19 0.21 0.0025"/>
   <parent link="base_link"/>
-  <child link="ruota_v1__2__1"/>
+  <child link="wheel_front_right"/>
   <axis xyz="-0.0 -1.0 0.0"/>
 </joint>
 
 <joint name="reardx" type="continuous">
   <origin rpy="0 0 0" xyz="0.19 0.21 0.0025"/>
   <parent link="base_link"/>
-  <child link="ruota_v1__3__1"/>
+  <child link="wheel_rear_right"/>
   <axis xyz="-0.0 -1.0 0.0"/>
 </joint>
+
+<joint name="camera_joint" type="fixed">
+  <origin rpy="0 0 3.14" xyz="-0.21 0 0.28"/>
+  <parent link="base_link"/>
+  <child link="camera_link"/>
+</joint>
+
+<joint name="camera_dummy_joint" type="fixed">
+  <origin rpy="-1.57 0 -1.57" xyz="0 0 0"/>
+  <parent link="camera_link"/>
+  <child link="camera_dummy_link"/>
+</joint>
+
 
 </robot>
